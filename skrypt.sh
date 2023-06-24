@@ -30,6 +30,12 @@ elif [[ "$1" = "--logs"* ]]; then
     echo "Nieprawidłowa liczba plików. Podaj poprawną liczbę dla flagi --logs."
   fi
 
+elif [ "$1" = "--help" ]; then
+  echo "Dostępne opcje:"
+  echo "--date      Wyświetla dzisiejszą datę."
+  echo "--logs      Tworzy 100 plików logx.txt."
+  echo "--logsN     Tworzy N plików logx.txt, gdzie N to podana liczba."
+
 else
-  echo "Nieznana flaga. Użyj --date, aby wyświetlić dzisiejszą datę, --logs, aby utworzyć 100 plików logx.txt, lub --logs{liczba}, aby określić własną liczbę plików."
+  echo "Nieznana flaga. Użyj --date, aby wyświetlić dzisiejszą datę, --logs, aby utworzyć 100 plików logx.txt, --logsN, aby określić własną liczbę plików, lub --help, aby wyświetlić dostępne opcje."
 fi
