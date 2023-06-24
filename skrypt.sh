@@ -20,10 +20,17 @@ elif [[ "$1" = "--logs" || "$1" = "-l" ]]; then
     echo "Nieprawidłowa liczba plików. Podaj poprawną liczbę dla flagi --logs."
   fi
 
+elif [[ "$1" = "--init" ]]; then
+  git clone . "$PWD/repo"
+  export PATH="$PWD/repo:$PATH"
+  echo "Repozytorium zostało sklonowane do katalogu: $PWD/repo"
+  echo "Ścieżka została dodana do zmiennej środowiskowej PATH"
+
 elif [[ "$1" = "--help" || "$1" = "-h" ]]; then
   echo "Dostępne opcje:"
   echo "--date, -d               Wyświetla dzisiejszą datę."
   echo "--logs [N], -l [N]       Tworzy N (domyślnie 100) plików logx.txt."
+  echo "--init                   Klonuje całe repozytorium do katalogu bieżącego i ustawia ścieżkę w zmiennej PATH."
   echo "--help, -h               Wyświetla dostępne opcje."
 
 else
